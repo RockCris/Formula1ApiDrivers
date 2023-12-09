@@ -141,7 +141,6 @@ footer {
   transition: transform 0.3s, border 0.3s, box-shadow 0.3s; /* Agrega transiciones suaves para transform, border y box-shadow */
   border-radius: 8px;
 }
-
 .contenedorRojo {
   background-color: red;
   padding: 10px; /* Agregar relleno según tus necesidades */
@@ -239,7 +238,6 @@ footer {
   transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave */
   transition: transform 0.3s, border 0.3s, box-shadow 0.3s; /* Agrega transiciones suaves para transform, border y box-shadow */
 }
-
 .ButtonHome:hover {
   font-weight: bold;
   color: #d12f1b;
