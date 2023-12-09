@@ -18,7 +18,7 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <Link to="/" className="enlaceEstilizado">
+          <Link to="/create" className="enlaceEstilizado">
             Create
           </Link>
         </div>
@@ -34,7 +34,7 @@ const Header = () => {
   </div>
 */}
       </div>
-      <div className="image-container">
+      <div className="image-container-red">
         <img src={carF1} alt="Icon" className="responsive-image" />
       </div>
     </div>
