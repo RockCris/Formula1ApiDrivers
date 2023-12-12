@@ -8,6 +8,7 @@ const {
 } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/drivers`, {
+
   logging: false, 
   native: false, 
 });
@@ -32,7 +33,7 @@ Team.belongsToMany(Driver, { through: 'DriverTeams' });
 // ...
 
 module.exports = {
-  Driver,
+  Driver:Driver,
   Team,
   conn: sequelize,
 };

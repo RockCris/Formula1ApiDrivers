@@ -23,7 +23,7 @@ const CardFunc = () => {
   return (
     <div>
       <h1>Cards Funciona</h1>
-      <div>
+      <div className='CardContainer'>
         {characters.map((char) => (
           <Card id={char.id} name={char.name} key={char.id} />
         ))}

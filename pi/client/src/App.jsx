@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LandingPage from "./Components/LandingPage";
 import HomePage from "./Components/HomePage";
-import FormPage from "./Components/FormPage";
-
+import CreatePage from "./Components/CreatePage";
+import Search from "./Components/Search";
 function App() {
   return (
     <>
@@ -11,7 +11,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/form" element={<FormPage />} />
+            <Route path="/create" element={<CreatePage />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </BrowserRouter>
       </div>

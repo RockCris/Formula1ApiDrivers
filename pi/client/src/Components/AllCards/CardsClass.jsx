@@ -18,7 +18,7 @@ class CardsClass extends React.Component {
     return (
       <div>
         <h1>CardClass</h1>
-        <div>
+        <div className='CardContainer'>
           {characters.map((char) => (
             <Card key={char.id} id={char.id} name={char.name} number={char.number} code={char.code}  image={char.image} />
           ))}

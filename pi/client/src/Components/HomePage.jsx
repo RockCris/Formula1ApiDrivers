@@ -1,13 +1,16 @@
-import React from 'react'
-import CardsClass from './AllCards/CardsClass'
-import CardFunc from './AllCards/CardFunc'
+import React from 'react';
+import Header from './PageModel/Header';
+import Body from './PageModel/Body';
+import Footer from './PageModel/Footer';
+
 const HomePage = () => {
   return (
-    <div className='app'>
-      <CardsClass  />
-      <CardFunc />
-    </div>
-  )
+    <>
+        <header> <Header/></header>
+        <body><Body/> </body>
+        <footer><Footer/></footer>
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;
