@@ -170,15 +170,16 @@ footer {
 }
 
 .Card:hover {
-  border: 10px solid rgb(192, 27, 27); /* Añade un borde de 10px al pasar el mouse */
-  box-shadow: inset 0 0 100px rgba(237, 57, 57, 0.975),
-    0 0 10px rgba(247, 54, 54, 0.975); /* Efecto de difuminado en el borde */
+  /* Efecto de difuminado en el borde */
   border-radius: 0;
   transform: scale(
     1.2
   ); /* Hace que el card se agrande al 120% al pasar el mouse sobre él */
   transition: transform 0.3s, border 0.3s, box-shadow 0.3s; /* Agrega transiciones suaves para transform, border y box-shadow */
   border-radius: 8px;
+  box-shadow: -10px -10px 50px 10px rgba(255, 255, 255, 0.479); 
+  /* Efecto de sombra en la parte superior y derecha */
+
 }
 .contenedorRojo {
   background-color: red;
@@ -300,7 +301,14 @@ footer {
   margin-top: 10%;
 
 }
+.Container-Search {
+  display: flex;
+  justify-content: space-around; /* Otra opción: space-between */
+  align-items: center;
+  padding: 20px;
+  margin-top: 10%;
 
+}
 /* Estilos para el formulario */
 .CardNew {
   background: white;
@@ -373,4 +381,16 @@ footer {
   font-weight: bold;
   font-size: 24px;
   /* Otros estilos según sea necesario para el contenido rojo */
+}
+
+.center-input-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 10vh; /* Ajusta la altura según tus necesidades */
+
+}
+
+.center-input {
+  width: 300px; /* Ajusta el ancho según tus necesidades */
 }

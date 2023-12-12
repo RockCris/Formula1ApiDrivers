@@ -23,7 +23,7 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <Link to="/" className="enlaceEstilizado">
+          <Link to="/Search" className="enlaceEstilizado">
             Search
           </Link>
         </div>

@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Header from './PageModel/Header';
-import Footer from './PageModel/Footer';
 import carF1 from "../Components/Images/Formula1Create.png";
+import { createCharacter } from '../Redux/Actions'; // Ajusta la ruta según tu estructura
 
 const CreatePage = () => {
+  const dispatch = useDispatch();
   const [imageUrl, setImageUrl] = useState('');
   const [forename, setForename] = useState('');
   const [surname, setSurname] = useState('');
-  const [id, setId] = useState('');
   const [number, setNumber] = useState('');
   const [code, setCode] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // Actualizar el estado correspondiente según el nombre del campo
+
     switch (name) {
       case 'forename':
         setForename(value);
         break;
       case 'surname':
         setSurname(value);
-        break;
-      case 'id':
-        setId(value);
         break;
       case 'number':
         setNumber(value);
@@ -38,12 +36,28 @@ const CreatePage = () => {
     }
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const characterData = {
+      nombre: forename,
+      apellido: surname,
+      descripcion: 'Alguna descripción',
+      imagen: imageUrl || 'URL_por_defecto',
+      nacionalidad: 'Alguna nacionalidad',
+      fechaNacimiento: '2023-01-01',
+      // Agregar otros campos según sea necesario
+    };
+
+    dispatch(createCharacter(characterData));
+  };
+
   return (
     <div>
       <Header />
       <div className='Container'>
         <div className='CardNew'>
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label>Nombre</label>
               <input
@@ -90,12 +104,12 @@ const CreatePage = () => {
           </form>
         </div>
         <div className="image-container-create">
-            <img
-              src={ carF1} // Usa la URL proporcionada o la de carF1 si imageUrl está vacío
-              alt={`Image of ${forename} ${surname}`}
-              className="responsive-image-create"
-            />
-          </div>
+          <img
+            src={carF1}
+            alt={`Image of ${forename} ${surname}`}
+            className="responsive-image-create"
+          />
+        </div>
         <div className="CardCreate" style={{ position: "relative" }}>
           {imageUrl && (
             <img
@@ -111,7 +125,7 @@ const CreatePage = () => {
               }}
             />
           )}
-          <p className="CardFormulaNumberCreate">{id}</p>
+          <p className="CardFormulaNumberCreate">{number}</p>
           <div className="contenedorRojoCreate">
             <p
               style={{
@@ -123,9 +137,6 @@ const CreatePage = () => {
               {forename} {surname}
             </p>
             <p>
-              <strong>ID:</strong> {id}
-            </p>
-            <p>
               <strong>Number:</strong> {number}
             </p>
             <p>
@@ -133,9 +144,7 @@ const CreatePage = () => {
             </p>
           </div>
         </div>
-
       </div>
-
     </div>
   );
 };
