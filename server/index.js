@@ -6,7 +6,7 @@ const PORT = 3001;
 const startServer = async () => {
   try {
     // Sincronizar la base de datos
-    await conn.sync({ force: true });
+    await conn.sync({ force: false });
     console.log('Base de datos sincronizada correctamente.');
 
     // Iniciar el servidor
